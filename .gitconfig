@@ -1,0 +1,12 @@
+[user]
+	# set in .gitconfig_local
+[include]
+	path = ~/.gitconfig_local
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = true
+[tag]
+	forceSignAnnotated = true
+[core]
+	editor = vim
