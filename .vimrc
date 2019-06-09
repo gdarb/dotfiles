@@ -1,5 +1,11 @@
 " ~~ Vim Settings ~~ "
 
+" set location of vim files 
+set viminfo+=n~/.vim/.viminfo
+set backupdir=~/.vim/tmp//
+set directory=~/.vim/tmp//
+set undodir=~/.vim/tmp//
+
 " syntax highlighting
 syntax on
 
