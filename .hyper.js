@@ -138,23 +138,32 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    // set options for hyperline
+    hyperline: {
+      plugins: [
+        "hostname",
+        "ip",
+        "battery"
+      ]
+    },
   },
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
-  plugins: ["hyper-snazzy"],
+    // a list of plugins to fetch and install from npm
+    // format: [@org/]project[#version]
+    // examples:
+    //   `hyperpower`
+    //   `@company/project`
+    //   `project#1.0.1`
+    plugins: ["hyper-snazzy", "hyperline", "hyper-quit"],
 
-  // in development, you can create a directory under
-  // `~/.hyper_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
-  localPlugins: [],
+    // in development, you can create a directory under
+    // `~/.hyper_plugins/local/` and include it here
+    // to load it and avoid it being `npm install`ed
+    localPlugins: [],
 
-  keymaps: {
-    // Example
-    // 'window:devtools': 'cmd+alt+o',
-  },
+    keymaps: {
+      // Example
+      // 'window:devtools': 'cmd+alt+o',
+    },
 };
