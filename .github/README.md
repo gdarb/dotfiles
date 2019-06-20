@@ -1,7 +1,18 @@
 # gdarb's dotfiles
 Inspired by [@durdn's dotfile setup](https://www.atlassian.com/git/tutorials/dotfiles), here is my dotfile setup for macOS.
 
-## Installation
+## Installation (script)
+1. Install Xcode command line tools
+```sh
+xcode-select —-install
+```
+
+2. Run installation script
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gdarb/dotfiles/master/.bin/install.sh)"
+```
+
+## Installation (manual)
 1. Ensure that the following alias is added to your _.bashrc_ or _.zshrc_ (where _.dotfiles_ is the name of the bare git repo you'll be cloning to)
 ```sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -52,8 +63,7 @@ config commit -m "[git] Add gitconfig"
 config push
 ```
 
-## Setup
-* Currently the _.gitconfig_ file sources another file _.gitconfig_local_ for all `[user]` settings
+### Manual Notes
 * The zsh prompt **pure** needs to be installed globally with [npm](https://www.npmjs.com/package/pure-prompt)
 ```sh
 npm install -g pure-prompt
@@ -66,8 +76,14 @@ brew install zsh-syntax-highlighting
 ```sh
 pip install virtualenvwrapper
 ```
-* Hyper will try to use a [Homebrew](https://formulae.brew.sh/formula/zsh) installed version of **zsh** which also needs to be added to _/etc/shells_
+* Hyper will try to use a [Homebrew](https://formulae.brew.sh/formula/zsh) installed version of **zsh** (which you can also add to _/etc/shells_ and set as the login shell)
 ```sh
 brew install zsh
+# below is for setting zsh as the login shell
 sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
+sudo chsh -s /usr/local/bin/zsh
+sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 ```
+
+## Setup
+* Currently the _.gitconfig_ file sources another file _.gitconfig_local_ for all `[user]` settings

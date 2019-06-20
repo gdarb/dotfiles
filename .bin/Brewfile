@@ -1,0 +1,38 @@
+tap "cloudflare/cloudflare"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Distributed revision control system
+brew "git"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Configurable static site generator
+brew "hugo"
+# Platform built on V8 to build network applications
+brew "node"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
+# Python dependency management tool
+brew "pipenv"
+# Prints a steam locomotive if you type sl instead of ls
+brew "sl"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Vi 'workalike' with many additional features
+brew "vim"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Argo Tunnel
+brew "cloudflare/cloudflare/cloudflared"
+cask "gimp"
+cask "gitkraken"
+cask "hyper"
+cask "java"
+cask "jetbrains-toolbox"
+cask "virtualbox"
+cask "virtualbox-extension-pack"
+cask "visual-studio-code"
