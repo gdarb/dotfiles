@@ -31,6 +31,9 @@ if [[ $(command -v brew) == "" ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# let user change Brewfile if they wish
+read -p "If you wish to modify the Brewfile (found in ~/.bin), do so now, then press Return to continue"
+
 # install brew packages / taps / casks
 brew bundle install --file=~/.bin/Brewfile
 
