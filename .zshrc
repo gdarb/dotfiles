@@ -15,8 +15,18 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit -d "$HOME/.zsh/.zcompdump"
 
-# source zsh-syntax-highlighting (installed with homebrew)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# work out which OS we're in
+OS="`uname`"
+case $OS in
+    'Darwin')
+        # source zsh-syntax-highlighting (installed with homebrew)
+        source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ;;
+    'Linux')
+    ;;
+    *)
+    ;;
+esac
 
 # set prompt to pure (installed with npm)
 autoload -U promptinit; promptinit
