@@ -1,15 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ~~ install gdarb dotfiles ~~
+
 
 # ask for sudo upfront
 sudo -v
 
 
 # ~~ git config ~~
-git clone --bare https://github.com/gdarb/dotfiles.git $HOME/.dotfiles
+git clone --bare --quiet https://github.com/gdarb/dotfiles.git $HOME/.dotfiles
 function config {
-   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+   git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@ --quiet
 }
 mkdir -p $HOME/.dotfiles-backup
 config checkout
@@ -24,37 +25,39 @@ config config status.showUntrackedFiles no
 config submodule update --init --recursive --remote
 
 
-# ~~ homebrew ~~
+# ~~ work out which OS we're in ~~
+OS="`uname`"
+case $OS in
+    'Darwin')
+        # check if homebrew is installed
+        if [[ $(command -v brew) == "" ]]; then
+            echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        fi
 
-# check if homebrew is installed
-if [[ $(command -v brew) == "" ]]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+        # let user change Brewfile if they wish
+        read -p "If you wish to modify the Brewfile (found in ~/.bin), do so now, then press Return to continue"
 
-# let user change Brewfile if they wish
-read -p "If you wish to modify the Brewfile (found in ~/.bin), do so now, then press Return to continue"
+        # install brew packages / taps / casks
+        brew bundle install --file=$HOME/.bin/Brewfile
 
-# install brew packages / taps / casks
-brew bundle install --file=~/.bin/Brewfile
+        # check if npm is installed
+        if [[ $(command -v npm) != "" ]]; then
+            npm install --global pure-prompt
+        fi
+
+        if [[ $(command -v pip3) != "" ]]; then
+            /usr/local/bin/pip3 install virtualenvwrapper
+            source /usr/local/bin/virtualenvwrapper.sh
+        fi
+    ;;
+    'Linux')
+    ;;
+    *)
+    ;;
+esac
 
 
-# ~~ npm ~~
-
-# TODO: install from file
-npm install --global pure-prompt
-
-
-# ~~ pip ~~
-
-# TODO: install from file
-/usr/local/bin/pip3 install virtualenvwrapper
-
-
-# ~~ zsh ~~
-
-sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
-sudo chsh -s /usr/local/bin/zsh
-sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
-
+# create local gitconfig if not already present
+touch $HOME/.gitconfig_local
 
 exit

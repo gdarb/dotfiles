@@ -1,61 +1,56 @@
 # gdarb's dotfiles
-Inspired by [@durdn's dotfile setup](https://www.atlassian.com/git/tutorials/dotfiles), here is my dotfile setup for macOS.
+Inspired by [@durdn's dotfile setup](https://www.atlassian.com/git/tutorials/dotfiles), here are my dotfiles.
 
-## Installation (script)
-1. Install Xcode command line tools
+## Installation (automatic)
+1. Ensure that `git` and `curl` are installed
+
+2. Run installation script and follow the prompts
 ```sh
-xcode-select —-install
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/gdarb/dotfiles/master/.bin/install.sh)"
 ```
 
-2. Run installation script
+3. Set `zsh` as your login shell
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gdarb/dotfiles/master/.bin/install.sh)"
+# replace /usr/local/bin/zsh with your path to zsh
+sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
+sudo chsh -s /usr/local/bin/zsh
 ```
 
 ## Installation (manual)
-1. Ensure that the following alias is added to your _.bashrc_ or _.zshrc_ (where _.dotfiles_ is the name of the bare git repo you'll be cloning to)
+1. Ensure that the following alias is defined
 ```sh
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
-2. Add _.dotfiles_ to your _.gitignore_
-```sh
-echo ".dotfiles" >> .gitignore
-```
-
-3. Clone this repo into a bare repository in your _$HOME_
+2. Clone this repo into a bare repository in your _$HOME_
 ```sh
 git clone --bare https://github.com/gdarb/dotfiles.git $HOME/.dotfiles
 ```
 
-4. Checkout the content from the bare repository to your _$HOME_
+3. Checkout the content from the bare repository to your _$HOME_
 ```sh
 config checkout
 ```
 
-6. If the above fails with a message such as _"error: The following untracked working tree files would be overwritten by checkout:"_ then backup any files in _$HOME_ that will be overwritten
+4. If the above fails with a message such as _"error: The following untracked working tree files would be overwritten by checkout:"_ then backup any files in _$HOME_ that will be overwritten & re-run the checkout
 ```sh
-mkdir -p .dotfiles-backup && \
+mkdir -p $HOME/.dotfiles-backup && \
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} .dotfiles-backup/{}
-```
-
-7. Re-run the checkout if there were any problems
-```sh
+xargs -I{} mv {} $HOME/.dotfiles-backup/{}
 config checkout
 ```
 
-8. Initialise and update all submodules
+5. Initialise and update all submodules
 ```sh
 config submodule update --init --recursive --remote
 ```
 
-9. Set the `showUntrackedFiles` flag to `no` for this repo
+6. Set the `showUntrackedFiles` flag to `no` for this repo
 ```sh
 config config --local status.showUntrackedFiles no
 ```
 
-10. Done! Now use the `config` alias to interact with your dotfiles
+7. Done! Now use the `config` alias to interact with your dotfiles
 ```sh
 config status
 config add .gitconfig
@@ -76,13 +71,9 @@ brew install zsh-syntax-highlighting
 ```sh
 pip install virtualenvwrapper
 ```
-* Hyper will try to use a [Homebrew](https://formulae.brew.sh/formula/zsh) installed version of **zsh** (which you can also add to _/etc/shells_ and set as the login shell)
+* Hyper will try to use a [Homebrew](https://formulae.brew.sh/formula/zsh) installed version of **zsh**, this can be configured in _.hyper.js_
 ```sh
 brew install zsh
-# below is for setting zsh as the login shell
-sudo sh -c 'echo /usr/local/bin/zsh >> /etc/shells'
-sudo chsh -s /usr/local/bin/zsh
-sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 ```
 
 ## Setup
