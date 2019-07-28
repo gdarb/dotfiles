@@ -47,6 +47,7 @@ case $OS in
 
         if [[ $(command -v pip3) != "" ]]; then
             /usr/local/bin/pip3 install virtualenvwrapper
+            export VIRTUALENVWRAPPER_PYTHON=$(which python3)
             source /usr/local/bin/virtualenvwrapper.sh
         fi
     ;;
