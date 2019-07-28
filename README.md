@@ -63,10 +63,6 @@ config push
 ```sh
 npm install -g pure-prompt
 ```
-* **zsh-syntax-highlighting** needs to be installed with [Homebrew](https://formulae.brew.sh/formula/zsh-syntax-highlighting)
-```sh
-brew install zsh-syntax-highlighting
-```
 * _.shrc_ sources **virtualenvwrapper** for Python which is installed with [pip](https://pypi.org/project/virtualenvwrapper/)
 ```sh
 pip install virtualenvwrapper
