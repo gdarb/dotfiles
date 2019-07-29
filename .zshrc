@@ -29,7 +29,17 @@ esac
 # source zsh-syntax-highlighting
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# set prompt to pure (installed with npm)
+# check if pure-prompt symlinks exist, if not then create them
+prompt_pure_setup=/usr/local/share/zsh/site-functions/prompt_pure_setup
+if [ ! -L $prompt_pure_setup ] && [ ! -e $prompt_pure_setup ]; then
+    ln -s "$HOME/.zsh/pure/pure.zsh" $prompt_pure_setup
+fi
+
+async=/usr/local/share/zsh/site-functions/async
+if [ ! -L $async ] && [ ! -e $async ]; then
+    ln -s "$HOME/.zsh/pure/async.zsh" $async
+fi
+
 autoload -U promptinit; promptinit
 prompt pure
 

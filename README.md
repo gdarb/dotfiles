@@ -59,10 +59,6 @@ config push
 ```
 
 ### Manual Notes
-* The zsh prompt **pure** needs to be installed globally with [npm](https://www.npmjs.com/package/pure-prompt)
-```sh
-npm install -g pure-prompt
-```
 * _.shrc_ sources **virtualenvwrapper** for Python which is installed with [pip](https://pypi.org/project/virtualenvwrapper/)
 ```sh
 pip install virtualenvwrapper

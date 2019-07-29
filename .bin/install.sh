@@ -40,11 +40,6 @@ case $OS in
         # install brew packages / taps / casks
         brew bundle install --file=$HOME/.bin/Brewfile
 
-        # check if npm is installed
-        if [[ $(command -v npm) != "" ]]; then
-            npm install --global pure-prompt
-        fi
-
         if [[ $(command -v pip3) != "" ]]; then
             /usr/local/bin/pip3 install virtualenvwrapper
             export VIRTUALENVWRAPPER_PYTHON=$(which python3)
