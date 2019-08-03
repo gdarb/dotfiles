@@ -63,10 +63,6 @@ config push
 ```sh
 pip install virtualenvwrapper
 ```
-* Hyper will try to use a [Homebrew](https://formulae.brew.sh/formula/zsh) installed version of **zsh**, this can be configured in _.hyper.js_
-```sh
-brew install zsh
-```
 
 ## Setup
 * Currently the _.gitconfig_ file sources another file _.gitconfig_local_ for all `[user]` settings
