@@ -2,7 +2,7 @@
 Inspired by [@durdn's dotfile setup](https://www.atlassian.com/git/tutorials/dotfiles), here are my dotfiles.
 
 ## Installation (automatic)
-1. Ensure that `git` and `curl` are installed
+1. Ensure that `bash`, `git`, and `curl` are installed
 
 2. Run installation script and follow the prompts
 ```sh
@@ -19,7 +19,7 @@ sudo chsh -s /usr/local/bin/zsh
 ## Installation (manual)
 1. Ensure that the following alias is defined
 ```sh
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 ```
 
 2. Clone this repo into a bare repository in your _$HOME_
