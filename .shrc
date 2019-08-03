@@ -49,3 +49,8 @@ export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+
+# alternative `pip3` version
+gpip3(){
+    PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
