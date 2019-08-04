@@ -1,7 +1,9 @@
 # ~~ zsh config ~~
 
 # add `z` command
-source ~/.zsh/zsh-z/zsh-z.plugin.zsh
+if [[ -r "$HOME/.zsh/zsh-z/zsh-z.plugin.zsh" ]]; then
+    source "$HOME/.zsh/zsh-z/zsh-z.plugin.zsh"
+fi
 export ZSHZ_DATA="$HOME/.zsh/.z"
 zstyle ':completion:*' menu select
 
@@ -27,7 +29,9 @@ case $OS in
 esac
 
 # source zsh-syntax-highlighting
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -r "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+    source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
 
 # check if pure-prompt symlinks exist, if not then create them
 prompt_pure_setup=/usr/local/share/zsh/site-functions/prompt_pure_setup
@@ -44,4 +48,6 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # source shell config
-source ~/.shrc
+if [[ -r "$HOME/.shrc" ]]; then
+    source "$HOME/.shrc"
+fi

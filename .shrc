@@ -39,8 +39,10 @@ alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 export WORKON_HOME="$HOME/.virtualenvs"
 
 # activate virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source /usr/local/bin/virtualenvwrapper.sh
+if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+	export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+	source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true

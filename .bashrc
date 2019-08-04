@@ -13,4 +13,6 @@ if type brew &>/dev/null; then
 fi
 
 # source shell config
-source ~/.shrc
+if [[ -r "$HOME/.shrc" ]]; then
+    source "$HOME/.shrc"
+fi
