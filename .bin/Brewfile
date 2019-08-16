@@ -1,9 +1,12 @@
 tap "cloudflare/cloudflare"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
 # Distributed revision control system
 brew "git"
 # GNU Pretty Good Privacy (PGP) package
@@ -12,6 +15,8 @@ brew "gnupg"
 brew "hugo"
 # Platform built on V8 to build network applications
 brew "node"
+# Open client for Cisco AnyConnect VPN
+brew "openconnect"
 # Interpreted, interactive, object-oriented programming language
 brew "python"
 # Python dependency management tool
