@@ -10,3 +10,6 @@
 [submodule ".zsh/pure"]
 	path = .zsh/pure
 	url = https://github.com/sindresorhus/pure.git
+[submodule ".vim/pack/plugins/start/gruvbox"]
+	path = .vim/pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
