@@ -2,28 +2,25 @@
 
 # ~~ install gdarb dotfiles ~~
 
-
 # ask for sudo upfront
 sudo -v
 
-
 # ~~ git config ~~
-git clone --bare --quiet https://github.com/gdarb/dotfiles.git $HOME/.dotfiles
+git clone --bare --quiet https://github.com/gdarb/dotfiles.git "$HOME/.dotfiles"
 function config {
-   git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@ --quiet
+   git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" $@ --quiet
 }
-mkdir -p $HOME/.dotfiles-backup
 config checkout
 if [ $? = 0 ]; then
   echo "Checked out dotfiles";
   else
     echo "Backing up pre-existing dotfiles";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $HOME/.dotfiles-backup/{}
+    mkdir -p "$HOME/.dotfiles-backup"
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} "$HOME/.dotfiles-backup/"{}
 fi
 config checkout
 config config status.showUntrackedFiles no
 config submodule update --init --recursive --remote
-
 
 # ~~ work out which OS we're in ~~
 OS="`uname`"
@@ -38,10 +35,10 @@ case $OS in
         read -p "If you wish to modify the Brewfile (found in ~/.bin), do so now, then press Return to continue"
 
         # install brew packages / taps / casks
-        brew bundle install --file=$HOME/.bin/Brewfile
+        brew bundle install --file="$HOME/.bin/Brewfile"
 
         if [[ $(command -v pip3) != "" ]]; then
-            /usr/local/bin/pip3 install virtualenvwrapper
+            pip3 install virtualenvwrapper
             export VIRTUALENVWRAPPER_PYTHON=$(which python3)
             source /usr/local/bin/virtualenvwrapper.sh
         fi
@@ -52,8 +49,18 @@ case $OS in
     ;;
 esac
 
+# check if pure-prompt symlinks exist, if not then create them
+prompt_pure_setup=/usr/local/share/zsh/site-functions/prompt_pure_setup
+if [ ! -L $prompt_pure_setup ] && [ ! -e $prompt_pure_setup ]; then
+    sudo ln -s "$HOME/.zsh/pure/pure.zsh" $prompt_pure_setup
+fi
+
+async=/usr/local/share/zsh/site-functions/async
+if [ ! -L $async ] && [ ! -e $async ]; then
+    sudo ln -s "$HOME/.zsh/pure/async.zsh" $async
+fi
 
 # create local gitconfig if not already present
-touch $HOME/.gitconfig_local
+touch "$HOME/.gitconfig_local"
 
 exit
