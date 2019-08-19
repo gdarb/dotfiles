@@ -1,8 +1,8 @@
 # ~~ bash config ~~
 
 # brew bash completion
-HOMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
+HOMEBREW_PREFIX=$(brew --prefix)
   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
   else
