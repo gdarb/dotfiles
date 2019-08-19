@@ -7,7 +7,7 @@ fi
 export ZSHZ_DATA="$HOME/.zsh/.z"
 zstyle ':completion:*' menu select
 
-HISTFILE=~/.zsh/.histfile
+HISTFILE="$HOME/.zsh/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd beep extendedglob nomatch notify

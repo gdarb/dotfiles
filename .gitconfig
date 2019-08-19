@@ -1,7 +1,7 @@
 [user]
 	# set in .gitconfig_local
 [include]
-	path = ~/.gitconfig_local
+	path = "~/.gitconfig_local"
 [gpg]
 	program = gpg
 [commit]
@@ -10,4 +10,4 @@
 	forceSignAnnotated = true
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = "~/.gitignore_global"
