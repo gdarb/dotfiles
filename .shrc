@@ -4,6 +4,9 @@
 OS="`uname`"
 case $OS in
     'Darwin')
+        # set ls to show colour
+        alias ls="ls -G"
+
         # have python & pip -> python3 & pip3
         export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -18,6 +21,7 @@ case $OS in
         alias brewify="brew update; brew upgrade; brew cask upgrade; brew cleanup"
     ;;
     'Linux')
+        alias ls="ls --color=auto"
     ;;
     *)
     ;;
@@ -26,11 +30,8 @@ esac
 # have GPG ask for passphrase in terminal
 export GPG_TTY=$(tty)
 
-# set ls to show colour
-alias ls="ls -G"
-
-# create ll to ls in one column
-alias ll="ls -1G"
+# use a long listing format
+alias ll="ls -la"
 
 # use `config` for managing dotfiles in git
 alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
