@@ -7,18 +7,22 @@ tap "homebrew/core"
 brew "bash"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
+# Isolated development environments using Docker
+brew "docker-compose"
 # Distributed revision control system
 brew "git"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Configurable static site generator
 brew "hugo"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Platform built on V8 to build network applications
 brew "node"
 # Open client for Cisco AnyConnect VPN
 brew "openconnect"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Python dependency management tool
 brew "pipenv"
 # Prints a steam locomotive if you type sl instead of ls
