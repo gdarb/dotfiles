@@ -78,13 +78,6 @@ config push
 pip install virtualenvwrapper
 ```
 
-* [pure](https://github.com/sindresorhus/pure) requires _pure.zsh_ and _async.zsh_ to be symlinked in `$fpath` (may require `sudo`)
-
-```sh
-ln -s "$HOME/.zsh/pure/pure.zsh" /usr/local/share/zsh/site-functions/prompt_pure_setup
-ln -s "$HOME/.zsh/pure/async.zsh" /usr/local/share/zsh/site-functions/async
-```
-
 ## Setup
 
 * Currently the _.gitconfig_ file sources another file _.gitconfig_local_ for all `[user]` settings

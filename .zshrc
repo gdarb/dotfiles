@@ -33,12 +33,11 @@ if [[ -r "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; th
     source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-autoload -U promptinit; promptinit
-
-# only load pure prompt if symlinks exist
-prompt_pure_setup=/usr/local/share/zsh/site-functions/prompt_pure_setup
-async=/usr/local/share/zsh/site-functions/async
-if [ -L $prompt_pure_setup ] && [ -e $prompt_pure_setup ] && [ -L $async ] && [ -e $async ]; then
+# check if pure prompt exists
+if [[ -d "$HOME/.zsh/pure" ]]; then
+    # add pure to `fpath` for `async` and `pure_prompt_setup` symlinks
+    fpath+=("$HOME/.zsh/pure")
+    autoload -U promptinit; promptinit
     prompt pure
 fi
 

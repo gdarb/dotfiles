@@ -49,17 +49,6 @@ case $OS in
     ;;
 esac
 
-# check if pure-prompt symlinks exist, if not then create them
-prompt_pure_setup=/usr/local/share/zsh/site-functions/prompt_pure_setup
-if [ ! -L $prompt_pure_setup ] && [ ! -e $prompt_pure_setup ]; then
-    sudo ln -s "$HOME/.zsh/pure/pure.zsh" $prompt_pure_setup
-fi
-
-async=/usr/local/share/zsh/site-functions/async
-if [ ! -L $async ] && [ ! -e $async ]; then
-    sudo ln -s "$HOME/.zsh/pure/async.zsh" $async
-fi
-
 # create local gitconfig if not already present
 touch "$HOME/.gitconfig_local"
 
