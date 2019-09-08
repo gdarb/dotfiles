@@ -11,6 +11,10 @@ brew "docker"
 brew "python"
 # Isolated development environments using Docker
 brew "docker-compose"
+# macOS Credential Helper for Docker
+brew "docker-credential-helper"
+# Create Docker hosts locally and on cloud providers
+brew "docker-machine"
 # Distributed revision control system
 brew "git"
 # GNU Pretty Good Privacy (PGP) package
@@ -23,6 +27,8 @@ brew "neovim"
 brew "node"
 # Open client for Cisco AnyConnect VPN
 brew "openconnect"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # Python dependency management tool
 brew "pipenv"
 # Prints a steam locomotive if you type sl instead of ls
