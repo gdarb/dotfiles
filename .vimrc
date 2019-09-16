@@ -58,8 +58,7 @@ set wrap
 
 " ~~ Colourscheme ~~ "
 
-colorscheme gruvbox
-
-set background=dark
+colorscheme molokai
 
 hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE ctermfg=grey
