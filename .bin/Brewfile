@@ -1,6 +1,7 @@
 tap "cloudflare/cloudflare"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -41,6 +42,7 @@ brew "vim"
 brew "zsh"
 # Argo Tunnel
 brew "cloudflare/cloudflare/cloudflared"
+cask "font-fira-code"
 cask "gimp"
 cask "gitkraken"
 cask "hyper"
