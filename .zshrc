@@ -17,6 +17,9 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit -d "$HOME/.zsh/.zcompdump"
 
+# make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+export KEYTIMEOUT=1
+
 # work out which OS we're in
 OS="`uname`"
 case $OS in
