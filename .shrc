@@ -17,6 +17,12 @@ case $OS in
         # Note: added to end of $PATH as to not override Homebrew's vim
         export PATH="$PATH:/Applications/MacVim.app/Contents/bin"
 
+        # add ssh key to ssh-agent using the built-in macOS ssh tool
+        # to allow storing of the keyphrase in the macOS Keychain
+        if [[ -r "$HOME/.ssh/id_rsa" ]]; then
+            /usr/bin/ssh-add -qK "$HOME/.ssh/id_rsa"
+        fi
+
         # alias for all updating of homebrew
         alias brewify="brew update; brew upgrade; brew cask upgrade; brew cleanup"
 
