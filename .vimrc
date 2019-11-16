@@ -18,6 +18,9 @@ set showmatch
 " blink for X tenths of a second on matching brackets
 set mat=2
 
+" detect and wrap certain files
+filetype indent plugin on
+
 
 " ~~ Searching ~~ "
 
