@@ -1,6 +1,7 @@
 tap "cloudflare/cloudflare"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
@@ -30,6 +31,8 @@ brew "node"
 brew "openconnect"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
 # Python dependency management tool
 brew "pipenv"
 # Prints a steam locomotive if you type sl instead of ls
@@ -46,7 +49,6 @@ cask "font-fira-code"
 cask "gimp"
 cask "gitkraken"
 cask "hyper"
-cask "java"
 cask "jetbrains-toolbox"
 cask "keybase"
 cask "virtualbox"
