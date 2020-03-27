@@ -36,6 +36,11 @@ if [[ -r "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; th
     source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
+# source zsh-autosuggestions
+if [[ -r "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
 # check if pure prompt exists
 if [[ -d "$HOME/.zsh/pure" ]]; then
     # add pure to `fpath` for `async` and `pure_prompt_setup` symlinks
