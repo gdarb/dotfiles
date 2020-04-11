@@ -9,8 +9,6 @@ tap "homebrew/core"
 brew "bash"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
-# Interpreted, interactive, object-oriented programming language
-brew "python"
 # Isolated development environments using Docker
 brew "docker-compose"
 # macOS Credential Helper for Docker
@@ -25,16 +23,22 @@ brew "gnupg"
 brew "hugo"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
 # Open client for Cisco AnyConnect VPN
 brew "openconnect"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# PNG file optimizer
+brew "optipng"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Python dependency management tool
 brew "pipenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
 # Prints a steam locomotive if you type sl instead of ls
 brew "sl"
 # Display directories as trees (with optional color/HTML output)
@@ -45,6 +49,7 @@ brew "vim"
 brew "zsh"
 # Argo Tunnel
 brew "cloudflare/cloudflare/cloudflared"
+cask "figma"
 cask "font-fira-code"
 cask "gimp"
 cask "gitkraken"
@@ -54,3 +59,4 @@ cask "keybase"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
+cask "zoomus"
