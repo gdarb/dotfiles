@@ -29,6 +29,7 @@ case $OS in
         # check if homebrew is installed
         if [[ $(command -v brew) == "" ]]; then
             echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+            brew analytics off
         fi
 
         # let user change Brewfile if they wish

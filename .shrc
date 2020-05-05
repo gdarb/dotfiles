@@ -26,6 +26,9 @@ case $OS in
         # alias for all updating of homebrew
         alias brewify="brew update; brew upgrade; brew cask upgrade; brew cleanup"
 
+        # opt-out of homebrew analytics
+        export HOMEBREW_NO_ANALYTICS=1
+
         # alias for resetting launchpad order
         alias resetlaunchpad="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
     ;;
