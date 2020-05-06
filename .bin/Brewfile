@@ -41,6 +41,8 @@ brew "pipenv"
 brew "python"
 # Prints a steam locomotive if you type sl instead of ls
 brew "sl"
+# Manage code quality
+brew "sonarqube"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Vi 'workalike' with many additional features
