@@ -15,9 +15,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/gdarb/dotfiles/master/.b
 3. Set `zsh` as your login shell
 
 ```sh
-# replace /usr/local/bin/zsh with your path to zsh
-sudo sh -c "echo /usr/local/bin/zsh >> /etc/shells"
-sudo chsh -s /usr/local/bin/zsh
+# echo $(which zsh) | sudo tee -a /etc/shells
+chsh -s $(which zsh)
 ```
 
 ## Installation (manual)
