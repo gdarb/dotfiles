@@ -7,9 +7,6 @@ case $OS in
         # set ls to show colour
         alias ls="ls -G"
 
-        # have python & pip -> python3 & pip3
-        export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
         # use the homebrew ruby & gem
         export PATH="/usr/local/opt/ruby/bin:$PATH"
 
