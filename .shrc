@@ -43,7 +43,9 @@ export GPG_TTY=$(tty)
 alias ll="ls -la"
 
 # use `config` for managing dotfiles in git
-alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+function config() {
+    (cd && git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@)
+}
 
 # set $WORKON_HOME (just in case)
 export WORKON_HOME="$HOME/.virtualenvs"
