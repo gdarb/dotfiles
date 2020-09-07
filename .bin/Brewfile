@@ -25,6 +25,8 @@ brew "git"
 brew "gnupg"
 # Configurable static site generator
 brew "hugo"
+# Utility to optimize JPEG files
+brew "jpegoptim"
 # Java-based project management
 brew "maven"
 # Ambitious Vim-fork focused on extensibility and agility
