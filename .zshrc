@@ -41,14 +41,6 @@ if [[ -r "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
     source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
-# check if pure prompt exists
-if [[ -d "$HOME/.zsh/pure" ]]; then
-    # add pure to `fpath` for `async` and `pure_prompt_setup` symlinks
-    fpath+=("$HOME/.zsh/pure")
-    autoload -U promptinit; promptinit
-    prompt pure
-fi
-
 # source shell config
 if [[ -r "$HOME/.shrc" ]]; then
     source "$HOME/.shrc"
