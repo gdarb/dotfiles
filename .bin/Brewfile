@@ -11,8 +11,6 @@ brew "bash"
 brew "bat"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Isolated development environments using Docker
 brew "docker-compose"
 # macOS Credential Helper for Docker
@@ -29,6 +27,8 @@ brew "gnupg"
 brew "hugo"
 # Utility to optimize JPEG files
 brew "jpegoptim"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Java-based project management
 brew "maven"
 # Ambitious Vim-fork focused on extensibility and agility
