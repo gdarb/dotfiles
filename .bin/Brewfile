@@ -19,6 +19,8 @@ brew "docker-compose"
 brew "docker-credential-helper"
 # Create Docker hosts locally and on cloud providers
 brew "docker-machine"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
 # GNU Pretty Good Privacy (PGP) package
