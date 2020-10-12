@@ -4,7 +4,7 @@ Inspired by [@durdn's dotfile setup](https://www.atlassian.com/git/tutorials/dot
 
 ## Installation (automatic)
 
-1. Ensure that `bash`, `git`, and `curl` are installed
+1. Ensure that `bash`, `git`, `curl`, and [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy) are installed
 
 2. Run installation script and follow the prompts
 
@@ -76,6 +76,8 @@ config push
 ```sh
 pip install virtualenvwrapper
 ```
+
+* _git core.pager_ requires [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy) to be installed
 
 ## Setup
 
