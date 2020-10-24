@@ -51,6 +51,6 @@ case $OS in
 esac
 
 # create local gitconfig if not already present
-touch "$HOME/.gitconfig_local"
+touch "$HOME/.config/git/config_local"
 
 exit

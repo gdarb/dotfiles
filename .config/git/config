@@ -1,7 +1,7 @@
 [user]
-	# set in .gitconfig_local
+	# set in `~/.config/git/config_local`
 [include]
-	path = "~/.gitconfig_local"
+	path = "~/.config/git/config_local"
 [gpg]
 	program = gpg
 [commit]
