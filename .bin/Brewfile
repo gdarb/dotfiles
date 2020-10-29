@@ -9,8 +9,6 @@ tap "homebrew/core"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Good-lookin' diffs with diff-highlight and more
-brew "diff-so-fancy"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
