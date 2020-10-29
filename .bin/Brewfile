@@ -19,18 +19,20 @@ brew "docker-compose"
 brew "docker-credential-helper"
 # Create Docker hosts locally and on cloud providers
 brew "docker-machine"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Configurable static site generator
 brew "hugo"
 # Utility to optimize JPEG files
 brew "jpegoptim"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Java-based project management
 brew "maven"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -49,10 +51,14 @@ brew "optipng"
 brew "pinentry-mac"
 # Python dependency management tool
 brew "pipenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Prints a steam locomotive if you type sl instead of ls
 brew "sl"
 # Manage code quality
 brew "sonarqube"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Simplified and community-driven man pages
 brew "tldr"
 # Display directories as trees (with optional color/HTML output)
