@@ -56,6 +56,16 @@ if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
 	source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# use `vivid` to set LS_COLORS
+if command -v vivid &> /dev/null; then
+	export LS_COLORS="$(vivid generate snazzy)"
+fi
+
+# use `bat` as MANPAGER
+if command -v bat &> /dev/null; then
+	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
 
