@@ -1,0 +1,14 @@
+[gpg]
+    program = gpg
+[commit]
+    gpgSign = true
+[tag]
+    forceSignAnnotated = true
+[submodule]
+    recurse = true
+[pull]
+    ff = only
+[init]
+    defaultBranch = main
+[include]
+    path = "config_local"

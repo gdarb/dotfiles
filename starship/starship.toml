@@ -1,0 +1,4 @@
+# https://starship.rs/config/
+
+[python]
+python_binary = "python3"
