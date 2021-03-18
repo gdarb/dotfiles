@@ -1,0 +1,89 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Modern replacement for 'ls'
+brew "exa"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Command-line benchmarking tool
+brew "hyperfine"
+# Utility to optimize JPEG files
+brew "jpegoptim"
+# Helps you navigate your file system faster by learning your habits
+brew "jump"
+# Pager program similar to more
+brew "less"
+# Development kit for the Java programming language
+brew "openjdk"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Platform built on V8 to build network applications
+brew "node"
+# Open client for Cisco AnyConnect VPN
+brew "openconnect"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
+# PNG file optimizer
+brew "optipng"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Python dependency management tool
+brew "pipenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Prints a steam locomotive if you type sl instead of ls
+brew "sl"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Simplified and community-driven man pages
+brew "tldr"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Generator for LS_COLORS with support for multiple color themes
+brew "vivid"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Screen capturing tool
+cask "cleanshot"
+cask "figma"
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "font-inter"
+# Free and open-source image editor
+cask "gimp"
+# Vector graphics editor
+cask "inkscape"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# End-to-end encryption software
+cask "keybase"
+# Free and open-source hosted hypervisor for x86 virtualization
+cask "virtualbox"
+# AMD64/Intel64 and x86 virtualization
+cask "virtualbox-extension-pack"
+# Open-source code editor
+cask "visual-studio-code"
+# Video communication and virtual meeting platform
+cask "zoom"

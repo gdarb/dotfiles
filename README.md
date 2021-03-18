@@ -1,84 +1,15 @@
-# gdarb's dotfiles
+# dotfiles
 
-Inspired by [@durdn's dotfile setup](https://www.atlassian.com/git/tutorials/dotfiles), here are my dotfiles.
-
-## Installation (automatic)
-
-1. Ensure that `bash`, `git`, `curl`, and [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy) are installed
-
-2. Run installation script and follow the prompts
+Ensure that [`fish`](https://fishshell.com) and [`git`](https://git-scm.com) are installed
 
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/gdarb/dotfiles/master/.bin/install.sh)"
+$ git clone https://github.com/gdarb/dotfiles.git
+$ cd dotfiles
+$ ./scripts/bootstrap
 ```
 
-3. Set `zsh` as your login shell
+## Things to keep in mind
 
-```sh
-# echo $(which zsh) | sudo tee -a /etc/shells
-chsh -s $(which zsh)
-```
-
-## Installation (manual)
-
-1. Ensure that the following alias is defined
-
-```sh
-alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-```
-
-2. Clone this repo into a bare repository in your _$HOME_
-
-```sh
-git clone --bare https://github.com/gdarb/dotfiles.git "$HOME/.dotfiles"
-```
-
-3. Checkout the content from the bare repository to your _$HOME_
-
-```sh
-config checkout
-```
-
-4. If the above fails with a message such as _"error: The following untracked working tree files would be overwritten by checkout:"_ then backup any files in _$HOME_ that will be overwritten & re-run the checkout
-
-```sh
-mkdir -p "$HOME/.dotfiles-backup" && \
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} "$HOME/.dotfiles-backup/"{}
-config checkout
-```
-
-5. Initialise and update all submodules
-
-```sh
-config submodule update --init --recursive --remote
-```
-
-6. Set the `showUntrackedFiles` flag to `no` for this repo
-
-```sh
-config config --local status.showUntrackedFiles no
-```
-
-7. Done! Now use the `config` alias to interact with your dotfiles
-
-```sh
-config status
-config add .gitconfig
-config commit -m "[git] Add gitconfig"
-config push
-```
-
-### Manual Notes
-
-* _.shrc_ sources [virtualenvwrapper](https://pypi.org/project/virtualenvwrapper/) for Python which is installed with pip
-
-```sh
-pip install virtualenvwrapper
-```
-
-* _git core.pager_ requires [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy) to be installed
-
-## Setup
-
-* Currently the _.gitconfig_ file sources another file _.gitconfig_local_ for all `[user]` settings
+-   Inside each directory there should be a `_bootstrap.fish` script that sets up everything in an idempotent manner
+-   Similarly there should be a `_config.fish` file in each directory that is loaded on shell launch
+-   Any other files located in a directoy can either be symlinked to the relevant location by `_bootstrap.fish` or sourced by `_config.fish`
