@@ -3,7 +3,7 @@ function git_config -d "prompt for git config if not set" -a file key
         user git config $key
         git config --file $file $key (read)
     else
-        success (set_color --italics)"skipped `git config $key`"(set_color normal)
+        success "skipped "(set_color --italics)"`git config $key`"(set_color normal)
     end
 end
 
