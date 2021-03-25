@@ -21,9 +21,10 @@ $ ./scripts/bootstrap
 
 ## Notes
 
+-   While only `fish` & `git` are required, a full list of additional software can be found in `homebrew/Brewfile` or by inspecting each directory
+    -   [`starship`](https://starship.rs) is used as the prompt, without it installed the default prompt will be used
 -   No cleanup is done on files removed from this repository (i.e. symlinks residing in `$HOME`)
 -   Any files that would be overwritten by `scripts/bootstrap` are moved to a temporary directory
--   While only `fish` & `git` are required, a full list of additional software can be found in `homebrew/Brewfile` or by inspecting each directory
 
 ## Contributing
 
