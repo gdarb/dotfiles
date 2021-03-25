@@ -64,10 +64,7 @@ begin
     set BACKUP (mktemp -d -t dotfiles)
 
     # account for running this in the `scripts` directory
-    set -Ux DOTFILES (pwd -P)
-    if [ (basename $DOTFILES) = scripts ]
-        set -Ux DOTFILES (dirname (pwd -P))
-    end
+    set -Ux DOTFILES (dirname (realpath (status dirname)))
 
     for bootstrap in $DOTFILES/*/_bootstrap.fish
         set SRC (dirname $bootstrap)
