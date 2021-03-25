@@ -1,8 +1,16 @@
+function which_fish
+    echo -n (set_color --italics)(which fish)(set_color normal)
+end
+
+function etc_shells
+    echo -n (set_color --italics)"/etc/shells"(set_color normal)
+end
+
 function change_shell
-    user "changing default shell to" (set_color --italics)(which fish)(set_color normal)
+    user "changing default shell to" (which_fish)
     chsh -s (which fish)
-    and success "changed default shell to" (set_color --italics)(which fish)(set_color normal)
-    or abort "could not change default shell to" (set_color --italics)(which fish)(set_color normal)
+    and success "changed default shell to" (which_fish)
+    or abort "could not change default shell to" (which_fish)
 end
 
 begin
@@ -11,12 +19,12 @@ begin
 
     # add to /etc/shells
     if not grep -q (which fish) /etc/shells
-        user adding (set_color --italics)(which fish)(set_color normal) to (set_color --italics)"/etc/shells"(set_color normal)
+        user adding (which_fish) to (etc_shells)
         which fish | sudo tee -a /etc/shells >/dev/null
-        and success added (set_color --italics)(which fish)(set_color normal) to (set_color --italics)"/etc/shells"(set_color normal)
-        or abort "could not add" (set_color --italics)(which fish)(set_color normal) to (set_color --italics)"/etc/shells"(set_color normal)
+        and success added (which_fish) to (etc_shells)
+        or abort "could not add" (which_fish) to (etc_shells)
     else
-        success "skipped adding" (set_color --italics)(which fish)(set_color normal) to (set_color --italics)"/etc/shells"(set_color normal)
+        success "skipped adding" (which_fish) to (etc_shells)
     end
 
     # set default shell
@@ -26,7 +34,7 @@ begin
             if test (dscl . -read ~/ UserShell | sed 's/UserShell: //') != (which fish)
                 change_shell
             else
-                success "skipped changing default shell to" (set_color --italics)(which fish)(set_color normal)
+                success "skipped changing default shell to" (which_fish)
             end
         case "*"
             change_shell
