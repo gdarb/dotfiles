@@ -12,14 +12,12 @@ begin
     link_file $SRC/config $XDG_CONFIG_HOME/git/config $BACKUP/(basename $SRC)
     link_file $SRC/ignore $XDG_CONFIG_HOME/git/ignore $BACKUP/(basename $SRC)
 
-
     # prompt for info to go into config_local
     set -l git_config_local $XDG_CONFIG_HOME/git/config_local
 
     git_config $git_config_local user.name
     git_config $git_config_local user.email
     git_config $git_config_local user.signingKey
-
 
     # add program specific pagers etc
     if type -q nvim
