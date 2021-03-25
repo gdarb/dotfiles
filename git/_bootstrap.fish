@@ -14,19 +14,19 @@ begin
 
 
     # prompt for info to go into config_local
-    set -l GIT_CONFIG_LOCAL $XDG_CONFIG_HOME/git/config_local
+    set -l git_config_local $XDG_CONFIG_HOME/git/config_local
 
-    git_config $GIT_CONFIG_LOCAL user.name
-    git_config $GIT_CONFIG_LOCAL user.email
-    git_config $GIT_CONFIG_LOCAL user.signingKey
+    git_config $git_config_local user.name
+    git_config $git_config_local user.email
+    git_config $git_config_local user.signingKey
 
 
     # add program specific pagers etc
     if type -q nvim
-        git config --file $GIT_CONFIG_LOCAL core.editor nvim
+        git config --file $git_config_local core.editor nvim
     end
 
     if type -q delta
-        git config --file $GIT_CONFIG_LOCAL core.pager delta
+        git config --file $git_config_local core.pager delta
     end
 end
