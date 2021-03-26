@@ -1,0 +1,48 @@
+#!/usr/bin/env fish
+
+function info
+    echo (set_color --bold yellow)"!"(set_color normal) $argv
+end
+
+function user
+    echo (set_color --bold blue)"?"(set_color normal) $argv
+end
+
+function success
+    echo (set_color --bold green)"✓"(set_color normal) $argv
+end
+
+function abort
+    echo (set_color --bold red)"✗"(set_color normal) $argv
+    exit 1
+end
+
+function link_file -d "links a file keeping a backup" -a src target backup
+    set -l backup_loc $backup/(basename $target)
+
+    # set pretty strings for printing
+    set -l src_string (set_color --italics magenta)(string replace "$SRC/" "" "$src")(set_color normal)
+    set -l target_string (set_color --italics bryellow)(string replace "$HOME/" "~/" "$target")(set_color normal)
+    set -l backup_string (set_color --italics cyan)(string replace "$TMPDIR" '$TMPDIR/' "$backup_loc")(set_color normal)
+
+    if test -e $target
+        set newfile (readlink $target)
+        if test "$newfile" = "$src"
+            success "skipped $src_string"
+            return
+        else
+            move_file $target $backup_loc
+            and info "backed up $target_string to $backup_string"
+            or abort "failed to backup $target to $backup_string"
+        end
+    end
+    mkdir -p (dirname $target)
+    and ln -sf $src $target
+    and success "linked $src_string to $target_string"
+    or abort "could not link $src_string to $target_string"
+end
+
+function move_file -d "moves a file to a directory" -a file directory
+    mkdir -p (dirname $directory)
+    mv $file $directory
+end
