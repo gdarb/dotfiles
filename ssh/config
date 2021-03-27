@@ -1,6 +1,6 @@
+Include config_local
+
 Host *
     IgnoreUnknown UseKeychain
     AddKeysToAgent yes
     UseKeychain yes
-
-Include config_local
