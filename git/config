@@ -11,4 +11,4 @@
 [init]
     defaultBranch = main
 [include]
-    path = "config_local"
+    path = config_local
