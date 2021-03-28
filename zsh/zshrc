@@ -3,18 +3,18 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-export ZSHZ_DATA="$HOME/.zsh/.z"
 zstyle ':completion:*' menu select
 
-export HISTFILE="$HOME/.zsh/.histfile"
+export HISTFILE=${XDG_CONFIG_HOME:-$HOME/.config}/zsh/histfile
 export HISTSIZE=1000
 export SAVEHIST=1000
+
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -v
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
-compinit -d "$HOME/.zsh/.zcompdump"
+compinit -d ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zcompdump
 
 # make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
