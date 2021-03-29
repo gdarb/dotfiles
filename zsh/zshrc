@@ -18,3 +18,8 @@ compinit -d ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zcompdump
 
 # make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
+
+# enable starship prompt
+if type starship &>/dev/null; then
+    eval "$(starship init zsh)"
+fi

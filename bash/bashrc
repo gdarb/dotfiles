@@ -9,3 +9,8 @@ if type brew &>/dev/null; then
         done
     fi
 fi
+
+# enable starship prompt
+if type starship &>/dev/null; then
+    eval "$(starship init bash)"
+fi
