@@ -46,3 +46,9 @@ function move_file -d "moves a file to a directory" -a file directory
     mkdir -p (dirname $directory)
     mv $file $directory
 end
+
+function check_install -d "check if a program is installed" -a program
+    if not type -q $program
+        abort "$program is not installed"
+    end
+end

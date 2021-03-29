@@ -1,4 +1,6 @@
 begin
+    check_install zsh
+
     # link zshrc
     link_file $SRC/zshrc $HOME/.zshrc $BACKUP/(basename $SRC)
 

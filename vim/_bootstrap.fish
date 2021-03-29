@@ -1,4 +1,6 @@
 begin
+    check_install vim
+
     set -l vim_home $HOME/.vim
 
     # link vimrc & gvimrc

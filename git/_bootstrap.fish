@@ -34,6 +34,8 @@ function git_config_test -d "check if git config is set to a value" -a file key 
 end
 
 begin
+    check_install git
+
     # link config files
     link_file $SRC/config $XDG_CONFIG_HOME/git/config $BACKUP/(basename $SRC)
     link_file $SRC/ignore $XDG_CONFIG_HOME/git/ignore $BACKUP/(basename $SRC)
