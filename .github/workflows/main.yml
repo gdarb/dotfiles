@@ -1,0 +1,18 @@
+name: CI
+
+on: push
+
+jobs:
+    bootstrap:
+        runs-on: macos-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install formulae
+              run: |
+                  export HOMEBREW_BUNDLE_CASK_SKIP=$(brew bundle list --cask --file homebrew/Brewfile)
+                  brew bundle install --file homebrew/Brewfile
+
+            - name: Run `bootstrap`
+              run: ./scripts/bootstrap
