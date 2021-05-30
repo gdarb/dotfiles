@@ -1,4 +1,10 @@
 # https://starship.rs/config/
 
+[directory]
+truncate_to_repo = false
+
+[directory.substitutions]
+"~/github.com/" = "github.com/"
+
 [python]
 python_binary = "python3"
