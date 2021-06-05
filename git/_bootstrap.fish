@@ -55,6 +55,7 @@ begin
 
     if type -q delta
         git_config_test $git_config_local core.pager delta
+        git_config_test $git_config_local delta.syntax-theme Nord
     end
 
     # add template file (as git-config doesn't expand environmental variables)
