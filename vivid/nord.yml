@@ -1,0 +1,122 @@
+# https://www.nordtheme.com/docs/ports/dircolors/type-support
+
+colors:
+    # Polar Night
+    nord0: "2E3440"
+    nord1: "3B4252"
+    nord2: "434C5E"
+    nord3: "4C566A"
+
+    # Snow Storm
+    nord4: "D8DEE9"
+    nord5: "E5E9F0"
+    nord6: "ECEFF4"
+
+    # Frost
+    nord7: "8FBCBB"
+    nord8: "88C0D0"
+    nord9: "81A1C1"
+    nord10: "5E81AC"
+
+    # Aurora
+    nord11: "BF616A"
+    nord12: "D08770"
+    nord13: "EBCB8B"
+    nord14: "A3BE8C"
+    nord15: "B48EAD"
+
+core:
+    regular_file: {}
+
+    directory:
+        foreground: nord9
+        font-style: bold
+
+    executable_file:
+        foreground: nord7
+        font-style: bold
+
+    symlink:
+        foreground: nord8
+
+    broken_symlink:
+        foreground: nord11
+
+    missing_symlink_target:
+        foreground: nord4
+        background: nord11
+        font-style: bold
+
+    fifo:
+        foreground: nord7
+        font-style: underline
+
+    socket:
+        foreground: nord13
+        font-style: underline
+
+    character_device:
+        foreground: nord13
+
+    block_device:
+        foreground: nord13
+        font-style: bold
+
+    normal_text: {}
+
+    sticky:
+        foreground: nord4
+        background: nord9
+        font-style: underline
+
+    other_writable:
+        foreground: nord9
+        font-style: bold
+        # font-style: underline
+
+    sticky_other_writable:
+        foreground: nord4
+        background: nord9
+        font-style: underline
+
+text:
+    special:
+        foreground: nord0
+        background: nord13
+
+    todo:
+        font-style: bold
+
+    licenses:
+        foreground: nord2
+
+    configuration:
+        foreground: nord13
+
+    other:
+        foreground: nord13
+
+markup:
+    foreground: nord13
+
+programming:
+    foreground: nord14
+
+media:
+    foreground: nord14
+
+office:
+    foreground: nord14
+
+archives:
+    foreground: nord14
+    font-style: bold
+
+executable:
+    foreground: nord7
+    font-style: bold
+
+unimportant:
+    foreground: nord3
+    # foreground: nord4
+    # font-style: dim

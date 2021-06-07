@@ -2,5 +2,5 @@
 
 # use `vivid` to set `LS_COLORS`
 if type -q vivid
-    set -gx LS_COLORS (vivid generate snazzy)
+    set -gx LS_COLORS (vivid generate nord)
 end
