@@ -1,9 +1,9 @@
 function which_fish
-    echo -n (set_color magenta)(set_italics)(which fish)(set_color normal)
+    echo -n (set_color --italics magenta)(which fish)(set_color normal)
 end
 
 function etc_shells
-    echo -n (set_color bryellow)(set_italics)"/etc/shells"(set_color normal)
+    echo -n (set_color --italics bryellow)"/etc/shells"(set_color normal)
 end
 
 function change_shell

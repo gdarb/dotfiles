@@ -1,19 +1,19 @@
 function git_config_success -a key value
-    success set (set_color magenta)(set_italics)`git config $key`(set_color normal) to (set_color bryellow)(set_italics)$value(set_color normal)
+    success set (set_color --italics magenta)`git config $key`(set_color normal) to (set_color --italics bryellow)$value(set_color normal)
 end
 
 function git_config_skip -a key
-    success skipped (set_color magenta)(set_italics)`git config $key`(set_color normal)
+    success skipped (set_color --italics magenta)`git config $key`(set_color normal)
 end
 
 function git_config_fail -a key
-    abort could not set (set_color magenta)(set_italics)`git config $key`(set_color normal)
+    abort could not set (set_color --italics magenta)`git config $key`(set_color normal)
 end
 
 function git_config_read -d "prompt for git config if not set" -a file key
     if not test (git config --file $file $key)
         user git config $key
-        read -p "echo (set_color blue)(set_bold)\> (set_color normal)" -l value
+        read -p "echo (set_color --bold blue)\> (set_color normal)" -l value
         git config --file $file $key $value
         and git_config_success $key $value
         or git_config_fail $key

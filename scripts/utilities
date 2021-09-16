@@ -1,35 +1,19 @@
 #!/usr/bin/env fish
 
-function set_bold -d "bold text if not in CI"
-    if not_ci
-        echo (set_color --bold) $argv
-    else
-        echo $argv
-    end
-end
-
-function set_italics -d "italicise text if not in CI"
-    if not_ci
-        echo (set_color --italics) $argv
-    else
-        echo $argv
-    end
-end
-
 function info
-    echo (set_color yellow)(set_bold)"!"(set_color normal) $argv
+    echo (set_color --bold yellow)"!"(set_color normal) $argv
 end
 
 function user
-    echo (set_color blue)(set_bold)"?"(set_color normal) $argv
+    echo (set_color --bold blue)"?"(set_color normal) $argv
 end
 
 function success
-    echo (set_color green)(set_bold)"✓"(set_color normal) $argv
+    echo (set_color --bold green)"✓"(set_color normal) $argv
 end
 
 function abort
-    echo (set_color red)(set_bold)"✗"(set_color normal) $argv
+    echo (set_color --bold red)"✗"(set_color normal) $argv
     exit 1
 end
 
@@ -37,9 +21,9 @@ function link_file -d "links a file keeping a backup" -a src target backup
     set -l backup_loc $backup/(basename $target)
 
     # set pretty strings for printing
-    set -l src_string (set_color magenta)(set_italics)(string replace "$SRC/" "" "$src")(set_color normal)
-    set -l target_string (set_color bryellow)(set_italics)(string replace "$HOME/" "~/" "$target")(set_color normal)
-    set -l backup_string (set_color cyan)(set_italics)(string replace "$TMPDIR" '$TMPDIR/' "$backup_loc")(set_color normal)
+    set -l src_string (set_color --italics magenta)(string replace "$SRC/" "" "$src")(set_color normal)
+    set -l target_string (set_color --italics bryellow)(string replace "$HOME/" "~/" "$target")(set_color normal)
+    set -l backup_string (set_color --italics cyan)(string replace "$TMPDIR" '$TMPDIR/' "$backup_loc")(set_color normal)
 
     if test -e $target
         set newfile (readlink $target)
