@@ -27,15 +27,15 @@ begin
 
     for bootstrap in $DOTFILES/*/_bootstrap.fish
         set SRC (dirname $bootstrap)
-        echo \n(set_color --bold)~~~ (basename $SRC) ~~~(set_color normal)
+        echo \n(set_bold)~~~ (basename $SRC) ~~~(set_color normal)
         source $bootstrap
         or set fail true
     end
 
     echo
     if set -q fail
-        abort (set_color --bold)"dotfiles not installed successfully"(set_color normal)
+        abort (set_bold)"dotfiles not installed successfully"(set_color normal)
     else
-        success (set_color --bold)"dotfiles installed successfully"(set_color normal)
+        success (set_bold)"dotfiles installed successfully"(set_color normal)
     end
 end
