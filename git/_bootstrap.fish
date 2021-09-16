@@ -44,9 +44,12 @@ begin
     # prompt for info to go into config_local
     set -l git_config_local $XDG_CONFIG_HOME/git/config_local
 
-    git_config_read $git_config_local user.name
-    git_config_read $git_config_local user.email
-    git_config_read $git_config_local user.signingKey
+    # GitHub CI is non-interactive
+    if not_ci
+        git_config_read $git_config_local user.name
+        git_config_read $git_config_local user.email
+        git_config_read $git_config_local user.signingKey
+    end
 
     # add program specific pagers etc
     if type -q nvim

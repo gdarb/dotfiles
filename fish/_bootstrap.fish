@@ -19,26 +19,29 @@ begin
     # link config.fish
     link_file $SRC/config.fish $XDG_CONFIG_HOME/fish/config.fish $BACKUP/(basename $SRC)
 
-    # add to /etc/shells
-    if not grep -q (which fish) /etc/shells
-        user adding (which_fish) to (etc_shells)
-        which fish | sudo tee -a /etc/shells >/dev/null
-        and success added (which_fish) to (etc_shells)
-        or abort "could not add" (which_fish) to (etc_shells)
-    else
-        success "skipped adding" (which_fish) to (etc_shells)
-    end
+    # GitHub CI doesn't let you change these
+    if not_ci
+        # add to /etc/shells
+        if not grep -q (which fish) /etc/shells
+            user adding (which_fish) to (etc_shells)
+            which fish | sudo tee -a /etc/shells >/dev/null
+            and success added (which_fish) to (etc_shells)
+            or abort "could not add" (which_fish) to (etc_shells)
+        else
+            success "skipped adding" (which_fish) to (etc_shells)
+        end
 
-    # set default shell
-    switch (uname)
-        case Darwin
-            # check if fish is already the default shell
-            if test (dscl . -read ~/ UserShell | sed 's/UserShell: //') != (which fish)
+        # set default shell
+        switch (uname)
+            case Darwin
+                # check if fish is already the default shell
+                if test (dscl . -read ~/ UserShell | sed 's/UserShell: //') != (which fish)
+                    change_shell
+                else
+                    success "skipped changing default shell to" (which_fish)
+                end
+            case "*"
                 change_shell
-            else
-                success "skipped changing default shell to" (which_fish)
-            end
-        case "*"
-            change_shell
+        end
     end
 end

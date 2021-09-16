@@ -1,5 +1,13 @@
 #!/usr/bin/env fish
 
+function set_color -d "override this to not print anything in CI"
+    if not_ci
+        builtin set_color $argv
+    else
+        echo
+    end
+end
+
 function info
     echo (set_color --bold yellow)"!"(set_color normal) $argv
 end
@@ -50,5 +58,13 @@ end
 function check_install -d "check if a program is installed" -a program
     if not type -q $program
         abort "$program is not installed"
+    end
+end
+
+function not_ci -d "return 0 if not running in GitHub CI"
+    if test "$CI" = "true"
+        return 1
+    else
+        return 0
     end
 end
