@@ -41,7 +41,11 @@ begin
                     success "skipped changing default shell to" (which_fish)
                 end
             case "*"
-                change_shell
+                if test (awk -F: -v u="$USER" 'u==$1&&$0=$NF' /etc/passwd) != (which fish)
+                    change_shell
+                else
+                    success "skipped changing default shell to" (which_fish)
+                end
         end
     end
 end
