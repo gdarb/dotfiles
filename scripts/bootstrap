@@ -21,6 +21,7 @@ begin
     end
 
     set BACKUP (mktemp -d)
+    or abort "could not create temporary directory"
 
     # unset in case this has been set beforehand
     set -e fail
