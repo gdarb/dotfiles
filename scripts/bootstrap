@@ -20,7 +20,8 @@ begin
         set XDG_DATA_HOME $HOME/.local/share
     end
 
-    set BACKUP (mktemp -d -t dotfiles)
+    set BACKUP (mktemp -d)
+    or abort "could not create temporary directory"
 
     # unset in case this has been set beforehand
     set -e fail
