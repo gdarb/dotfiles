@@ -6,5 +6,5 @@ set -l ssh_key $HOME/.ssh/id_rsa
 # to allow storing of the keyphrase in the macOS Keychain
 if test (uname) = Darwin
     and test -e $ssh_key
-    /usr/bin/ssh-add -qK $ssh_key
+    /usr/bin/ssh-add -q --apple-use-keychain $ssh_key
 end
