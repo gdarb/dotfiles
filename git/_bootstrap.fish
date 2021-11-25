@@ -58,6 +58,7 @@ begin
 
     if type -q delta
         git_config_test $git_config_local core.pager delta
+        git_config_test $git_config_local interactive.diffFilter "delta --color-only"
         git_config_test $git_config_local delta.syntax-theme Nord
     end
 
