@@ -2,7 +2,7 @@
 
 # alias `ls` to `exa`
 if type -q exa
-    function ls
+    function ls --wraps=exa
         exa $argv
     end
 end
