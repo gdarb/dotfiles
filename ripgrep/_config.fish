@@ -2,7 +2,7 @@
 
 # alias `grep` to `rg`
 if type -q rg
-    function grep
+    function grep --wraps=rg
         rg $argv
     end
 end

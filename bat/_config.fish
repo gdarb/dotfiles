@@ -2,7 +2,7 @@
 
 if type -q bat
     # alias `cat` to `bat`
-    function cat
+    function cat --wraps=bat
         bat $argv
     end
 
