@@ -26,26 +26,20 @@ colors:
     nord15: "B48EAD"
 
 core:
+    normal_text: {}
+
     regular_file: {}
+
+    reset_to_normal: {}
 
     directory:
         foreground: nord9
         font-style: bold
 
-    executable_file:
-        foreground: nord7
-        font-style: bold
-
     symlink:
         foreground: nord8
 
-    broken_symlink:
-        foreground: nord11
-
-    missing_symlink_target:
-        foreground: nord4
-        background: nord11
-        font-style: bold
+    multi_hard_link: {}
 
     fifo:
         foreground: nord7
@@ -55,16 +49,30 @@ core:
         foreground: nord13
         font-style: underline
 
-    character_device:
-        foreground: nord13
+    door: {}
 
     block_device:
         foreground: nord13
         font-style: bold
 
-    normal_text: {}
+    character_device:
+        foreground: nord13
 
-    sticky:
+    broken_symlink:
+        foreground: nord11
+
+    missing_symlink_target:
+        foreground: nord4
+        background: nord11
+        font-style: bold
+
+    setuid: {}
+
+    setgid: {}
+
+    file_with_capability: {}
+
+    sticky_other_writable:
         foreground: nord4
         background: nord9
         font-style: underline
@@ -74,10 +82,14 @@ core:
         font-style: bold
         # font-style: underline
 
-    sticky_other_writable:
+    sticky:
         foreground: nord4
         background: nord9
         font-style: underline
+
+    executable_file:
+        foreground: nord7
+        font-style: bold
 
 text:
     special:
