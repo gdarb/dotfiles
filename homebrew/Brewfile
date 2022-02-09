@@ -9,6 +9,8 @@ brew "bash"
 brew "bat"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
+# More intuitive version of du in rust
+brew "dust"
 # Modern replacement for 'ls'
 brew "exa"
 # Simple, fast and user-friendly alternative to find
@@ -29,6 +31,8 @@ brew "git-delta"
 brew "gnupg"
 # Command-line benchmarking tool
 brew "hyperfine"
+# Command-line editor
+brew "id3v2"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Utility to optimize JPEG files
