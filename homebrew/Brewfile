@@ -96,6 +96,8 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 # End-to-end encryption software
 cask "keybase"
+# Command-line shell and scripting language
+cask "powershell"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Virtualizer for x86 hardware
