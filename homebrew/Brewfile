@@ -29,6 +29,8 @@ brew "git"
 brew "git-delta"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Command-line editor
