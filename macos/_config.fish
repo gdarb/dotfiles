@@ -15,4 +15,9 @@ switch (uname)
                 $tailscale_executable $argv
             end
         end
+
+        function flushdns --description "flush dns cache"
+            sudo dscacheutil -flushcache
+            sudo killall -HUP mDNSResponder
+        end
 end
