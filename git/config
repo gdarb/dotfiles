@@ -10,7 +10,5 @@
     ff = only
 [init]
     defaultBranch = main
-[include]
-    path = config_local
 [diff]
     algorithm = histogram
