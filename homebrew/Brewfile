@@ -60,8 +60,6 @@ brew "openssh"
 brew "optipng"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
-# Python dependency management tool
-brew "pipenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Prints a steam locomotive if you type sl instead of ls
