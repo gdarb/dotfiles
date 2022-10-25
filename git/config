@@ -12,3 +12,5 @@
     defaultBranch = main
 [diff]
     algorithm = histogram
+[push]
+	autoSetupRemote = true
