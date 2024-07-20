@@ -1,21 +1,16 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
-tap "microsoft/git"
-# Bourne-Again SHell, a UNIX command interpreter
-brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+brew "python@3.12"
 # More intuitive version of du in rust
 brew "dust"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Implementation of the Unicode BiDi algorithm
+brew "fribidi"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -30,22 +25,10 @@ brew "git"
 brew "git-delta"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# User-friendly cURL replacement (command-line HTTP client)
-brew "httpie"
-# Command-line benchmarking tool
-brew "hyperfine"
-# Command-line editor
-brew "id3v2"
-# Tools and libraries to manipulate images in many formats
-brew "imagemagick"
-# Utility to optimize JPEG files
-brew "jpegoptim"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Helps you navigate your file system faster by learning your habits
 brew "jump"
-# Pager program similar to more
-brew "less"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Platform built on V8 to build network applications
@@ -56,14 +39,10 @@ brew "openconnect"
 brew "openjdk"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
-# PNG file optimizer
-brew "optipng"
-# Pinentry for GPG on Mac
-brew "pinentry-mac"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Prints a steam locomotive if you type sl instead of ls
-brew "sl"
+# Fast and accurate code counter with complexity and COCOMO estimates
+brew "scc"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Very fast implementation of tldr in Rust
@@ -74,39 +53,9 @@ brew "tree"
 brew "vim"
 # Generator for LS_COLORS with support for multiple color themes
 brew "vivid"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
-# UNIX shell (command interpreter)
-brew "zsh"
-# Screen capturing tool
-cask "cleanshot"
-# Collaborative team software
-cask "figma"
-# Web browser
-cask "firefox"
-cask "font-fira-code"
-cask "font-fira-code-nerd-font"
-cask "font-inter"
-# Free and open-source image editor
-cask "gimp"
-cask "git-credential-manager-core"
-# Vector graphics editor
-cask "inkscape"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
-# JetBrains tools manager
-cask "jetbrains-toolbox"
-# End-to-end encryption software
-cask "keybase"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # Command-line shell and scripting language
 cask "powershell"
-# Control your tools with a few keystrokes
-cask "raycast"
-# Virtualizer for x86 hardware
-cask "virtualbox"
-# Extend the functionality of VirtualBox
-cask "virtualbox-extension-pack"
-# Open-source code editor
-cask "visual-studio-code"
-# Video communication and virtual meeting platform
-cask "zoom"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin"
