@@ -26,6 +26,9 @@ set -g fish_color_valid_path --underline
 # silence greeting
 set -g fish_greeting
 
+# add homebrew to shell paths
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # source all _config.fish files
 for config in $DOTFILES/*/_config.fish
     source $config
