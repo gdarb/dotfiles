@@ -16,7 +16,7 @@ jobs:
             - name: Install formulae
               run: |
                   export HOMEBREW_NO_AUTO_UPDATE=1
-                  brew install bat exa fish fzf jump neovim ripgrep starship tealdeer vim vivid
+                  brew install bat eza fish fzf jump neovim ripgrep starship tealdeer vim vivid
 
             - name: Run `bootstrap`
               run: ./scripts/bootstrap
