@@ -1,6 +1,9 @@
 # https://github.com/junegunn/fzf
 
 if type -q fzf
+    # https://github.com/junegunn/fzf#setting-up-shell-integration
+    fzf --fish | source
+
     # use `fd` instead of `find`
     if type -q fd
         set -gx FZF_DEFAULT_COMMAND "fd --type f --color=always"
