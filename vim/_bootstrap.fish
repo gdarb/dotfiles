@@ -9,6 +9,7 @@ begin
 
     # link colors
     link_file $SRC/colors/molokai.vim $vim_home/colors/molokai.vim $BACKUP/(basename $SRC)
+    link_file $SRC/colors/nord.vim $vim_home/colors/nord.vim $BACKUP/(basename $SRC)
 
     # create `.vim/tmp` directory
     mkdir -p $vim_home/tmp
