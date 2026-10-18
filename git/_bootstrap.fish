@@ -61,8 +61,9 @@ begin
     end
 
     if type -q delta
-        git_config_test core.pager delta
+        git_config_test core.pager "delta --tabs=4"
         git_config_test interactive.diffFilter "delta --color-only"
         git_config_test delta.syntax-theme Nord
+        git_config_test delta.navigate true
     end
 end
