@@ -35,24 +35,21 @@ end
 begin
     check_install git
 
-    # link config files
-    link_file $SRC/config $XDG_CONFIG_HOME/git/dotfiles $BACKUP/(basename $SRC)
+    # link global ignore
     link_file $SRC/ignore $XDG_CONFIG_HOME/git/ignore $BACKUP/(basename $SRC)
-    link_file $SRC/template $XDG_CONFIG_HOME/git/template $BACKUP/(basename $SRC)
 
-    # add our config file to git config
-    git_config_test include.path dotfiles
-
-    # add template file (as git-config doesn't expand environmental variables)
-    set -l commit_template (string replace "$HOME/" "~/" "$XDG_CONFIG_HOME/git/template")
-    git_config_test commit.template $commit_template
+    # adding our configs to global git config using the absolute dotfiles
+    # path means we don't have to worry about where the global git config
+    # is or the fact that `commit.template` doesn't accept relative paths
+    git_config_test include.path $DOTFILES/git/dotfiles
+    git_config_test commit.template $DOTFILES/git/template
 
     # GitHub CI is non-interactive
     if not_ci
         # prompt for user info
-        git_config_read $git_config_local user.name
-        git_config_read $git_config_local user.email
-        git_config_read $git_config_local user.signingKey
+        git_config_read user.name
+        git_config_read user.email
+        git_config_read user.signingKey
     end
 
     # add program specific pagers etc
