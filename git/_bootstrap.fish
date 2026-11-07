@@ -32,6 +32,16 @@ function git_config_test -d "check if git config is set to a value" -a key value
     end
 end
 
+function git_config_append -d "append a git config value" -a key value
+    if not contains -- $value (git config get --global --all $key)
+        git config set --global --append $key $value
+        and git_config_success $key $value
+        or git_config_fail $key
+    else
+        git_config_skip $key
+    end
+end
+
 begin
     check_install git
 
@@ -41,7 +51,7 @@ begin
     # adding our configs to global git config using the absolute dotfiles
     # path means we don't have to worry about where the global git config
     # is or the fact that `commit.template` doesn't accept relative paths
-    git_config_test include.path $DOTFILES/git/dotfiles
+    git_config_append include.path $DOTFILES/git/dotfiles
     git_config_test commit.template $DOTFILES/git/template
 
     # GitHub CI is non-interactive
