@@ -51,7 +51,7 @@ begin
     # adding our configs to global git config using the absolute dotfiles
     # path means we don't have to worry about where the global git config
     # is or the fact that `commit.template` doesn't accept relative paths
-    git_config_append include.path $DOTFILES/git/dotfiles
+    git_config_append include.path $DOTFILES/git/config
     git_config_test commit.template $DOTFILES/git/template
 
     # GitHub CI is non-interactive
