@@ -33,7 +33,7 @@ function git_config_test -d "check if git config is set to a value" -a key value
 end
 
 function git_config_append -d "append a git config value" -a key value
-    if not contains -- $value (git config get --global --all $key)
+    if not git config get --global --value="$value" --fixed-value -- "$key" >/dev/null
         git config set --global --append $key $value
         and git_config_success $key $value
         or git_config_fail $key
